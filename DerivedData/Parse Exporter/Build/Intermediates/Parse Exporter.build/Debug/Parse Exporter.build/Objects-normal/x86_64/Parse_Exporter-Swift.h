@@ -118,6 +118,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import ObjectiveC;
 @import AppKit;
 @import Foundation;
+@import Parse;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -127,6 +128,17 @@ SWIFT_CLASS("_TtC14Parse_Exporter11AppDelegate")
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 - (void)applicationDidFinishLaunching:(NSNotification * _Nonnull)aNotification;
 - (void)applicationWillTerminate:(NSNotification * _Nonnull)aNotification;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class PFFile;
+
+SWIFT_CLASS("_TtC14Parse_Exporter8Category")
+@interface Category : PFObject <PFSubclassing>
++ (NSString * _Nonnull)parseClassName;
+@property (nonatomic, copy) NSString * _Null_unspecified name;
+@property (nonatomic, strong) PFFile * _Null_unspecified icon;
+- (nonnull instancetype)initWithClassName:(NSString * _Nonnull)newClassName OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

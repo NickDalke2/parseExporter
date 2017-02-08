@@ -1,6 +1,7 @@
 version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
 options: "5cc13bbafff09854c7e2dd16c20c760c"
-build_time: [538694613, 245083000]
+build_time: [539477547, 963982000]
 inputs:
-  "/Users/ND/Desktop/Parse Exporter/Parse Exporter/ViewController.swift": [538694432, 0]
-  "/Users/ND/Desktop/Parse Exporter/Parse Exporter/AppDelegate.swift": [537662069, 0]
+  "/Users/ND/Desktop/Parse Exporter/Parse Exporter/ViewController.swift": [539425690, 0]
+  "/Users/ND/Desktop/Parse Exporter/Parse Exporter/AppDelegate.swift": [539421397, 0]
+  "/Users/ND/Desktop/Parse Exporter/Parse Exporter/Category.swift": [539421062, 0]

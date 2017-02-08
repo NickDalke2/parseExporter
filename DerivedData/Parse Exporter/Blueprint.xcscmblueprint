@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A67FA7A85335B41D95E6410C6D20586E97A130C0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A67FA7A85335B41D95E6410C6D20586E97A130C0" : 9223372036854775807,
+    "F1D07746EB31E027FA6376B0262F3F0EA889F44A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "491095B2-CCB7-49A5-92D0-3E58A9EF176D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A67FA7A85335B41D95E6410C6D20586E97A130C0" : "Parse%20Exporter\/",
+    "F1D07746EB31E027FA6376B0262F3F0EA889F44A" : "Parse%20Exporter\/Parse%20Exporter\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Parse Exporter",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Parse Exporter.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NickDalke2\/parseExporter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A67FA7A85335B41D95E6410C6D20586E97A130C0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NickDalke2\/parseExp2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F1D07746EB31E027FA6376B0262F3F0EA889F44A"
+    }
+  ]
+}

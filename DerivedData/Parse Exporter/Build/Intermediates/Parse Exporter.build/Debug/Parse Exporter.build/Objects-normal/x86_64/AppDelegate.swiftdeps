@@ -6,18 +6,20 @@ provides-nominal:
 provides-member:
 - ["C14Parse_Exporter11AppDelegate", ""]
 provides-dynamic-lookup:
-- "applicationWillTerminate"
 - "applicationDidFinishLaunching"
+- "applicationWillTerminate"
 depends-top-level:
-- "NSObject"
-- "NSApplicationDelegate"
+- !private "Category"
 - !private "ParseClientConfiguration"
 - !private "AssignmentPrecedence"
-- "AppDelegate"
+- "Notification"
 - !private "Parse"
 - "StringLiteralType"
-- "Notification"
+- "AppDelegate"
+- "NSApplicationDelegate"
+- "NSObject"
 depends-member:
+- !private ["Ps9AnyObject", "Category"]
 - !private ["Ps9AnyObject", "Parse"]
 - !private ["Ps9AnyObject", "ParseClientConfiguration"]
 - ["Ps9AnyObject", "application"]
@@ -44,7 +46,9 @@ depends-member:
 - ["Ps9AnyObject", "applicationWillUpdate"]
 - !private ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "initialize"]
+- !private ["Ps9AnyObject", "registerSubclass"]
 - ["Ps9AnyObject", ""]
+- !private ["C14Parse_Exporter11AppDelegate", "Category"]
 - ["C14Parse_Exporter11AppDelegate", "Notification"]
 - !private ["C14Parse_Exporter11AppDelegate", "Parse"]
 - !private ["C14Parse_Exporter11AppDelegate", "ParseClientConfiguration"]
@@ -72,6 +76,7 @@ depends-member:
 - ["C14Parse_Exporter11AppDelegate", "applicationWillUpdate"]
 - ["C14Parse_Exporter11AppDelegate", "deinit"]
 - ["C14Parse_Exporter11AppDelegate", "init"]
+- !private ["Ps7CVarArg", "Category"]
 - !private ["Ps7CVarArg", "Parse"]
 - !private ["Ps7CVarArg", "ParseClientConfiguration"]
 - ["Ps7CVarArg", "application"]
@@ -98,8 +103,11 @@ depends-member:
 - ["Ps7CVarArg", "applicationWillUpdate"]
 - !private ["Ps7CVarArg", "init"]
 - !private ["Ps7CVarArg", "initialize"]
+- !private ["Ps7CVarArg", "registerSubclass"]
 - ["Ps7CVarArg", ""]
+- !private ["C14Parse_Exporter8Category", "registerSubclass"]
 - !private ["Ps10Comparable", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "Category"]
 - !private ["Ps28CustomDebugStringConvertible", "Parse"]
 - !private ["Ps28CustomDebugStringConvertible", "ParseClientConfiguration"]
 - ["Ps28CustomDebugStringConvertible", "application"]
@@ -126,9 +134,11 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "applicationWillUpdate"]
 - !private ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "initialize"]
+- !private ["Ps28CustomDebugStringConvertible", "registerSubclass"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps23CustomStringConvertible", "Category"]
 - !private ["Ps23CustomStringConvertible", "Parse"]
 - !private ["Ps23CustomStringConvertible", "ParseClientConfiguration"]
 - ["Ps23CustomStringConvertible", "application"]
@@ -155,7 +165,9 @@ depends-member:
 - ["Ps23CustomStringConvertible", "applicationWillUpdate"]
 - !private ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "initialize"]
+- !private ["Ps23CustomStringConvertible", "registerSubclass"]
 - ["Ps23CustomStringConvertible", ""]
+- !private ["Ps9Equatable", "Category"]
 - !private ["Ps9Equatable", "Parse"]
 - !private ["Ps9Equatable", "ParseClientConfiguration"]
 - ["Ps9Equatable", "application"]
@@ -182,11 +194,13 @@ depends-member:
 - ["Ps9Equatable", "applicationWillUpdate"]
 - !private ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "initialize"]
+- !private ["Ps9Equatable", "registerSubclass"]
 - ["Ps9Equatable", ""]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps32ExpressibleByStringInterpolation", "init"]
 - !private ["Ps26ExpressibleByStringLiteral", "init"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Ps8Hashable", "Category"]
 - !private ["Ps8Hashable", "Parse"]
 - !private ["Ps8Hashable", "ParseClientConfiguration"]
 - ["Ps8Hashable", "application"]
@@ -213,9 +227,11 @@ depends-member:
 - ["Ps8Hashable", "applicationWillUpdate"]
 - !private ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "initialize"]
+- !private ["Ps8Hashable", "registerSubclass"]
 - ["Ps8Hashable", ""]
 - !private ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps10MirrorPath", "init"]
+- !private ["PSo21NSApplicationDelegate", "Category"]
 - !private ["PSo21NSApplicationDelegate", "Parse"]
 - !private ["PSo21NSApplicationDelegate", "ParseClientConfiguration"]
 - ["PSo21NSApplicationDelegate", "application"]
@@ -244,6 +260,7 @@ depends-member:
 - !private ["PSo8NSCoding", "init"]
 - !private ["PSo9NSCopying", "init"]
 - !private ["PSo16NSMutableCopying", "init"]
+- !private ["CSo8NSObject", "Category"]
 - ["CSo8NSObject", "Notification"]
 - !private ["CSo8NSObject", "Parse"]
 - !private ["CSo8NSObject", "ParseClientConfiguration"]
@@ -272,7 +289,9 @@ depends-member:
 - ["CSo8NSObject", "deinit"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "initialize"]
+- !private ["CSo8NSObject", "registerSubclass"]
 - ["CSo8NSObject", ""]
+- !private ["PSo16NSObjectProtocol", "Category"]
 - !private ["PSo16NSObjectProtocol", "Parse"]
 - !private ["PSo16NSObjectProtocol", "ParseClientConfiguration"]
 - ["PSo16NSObjectProtocol", "application"]
@@ -301,6 +320,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "clientKey"]
 - !private ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "initialize"]
+- !private ["PSo16NSObjectProtocol", "registerSubclass"]
 - !private ["PSo16NSObjectProtocol", "server"]
 - ["PSo16NSObjectProtocol", ""]
 - !private ["PSo19NSPasteboardReading", "init"]
@@ -308,6 +328,8 @@ depends-member:
 - !private ["PSo14NSSecureCoding", "init"]
 - !private ["CSo8NSString", "init"]
 - !private ["Sq", "deinit"]
+- !private ["CSo8PFObject", "registerSubclass"]
+- !private ["PSo13PFSubclassing", "registerSubclass"]
 - !private ["CSo5Parse", "initialize"]
 - ["CSo24ParseClientConfiguration", "deinit"]
 - !private ["CSo24ParseClientConfiguration", "init"]
@@ -324,6 +346,7 @@ depends-member:
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps9_Hashable", "Category"]
 - !private ["Ps9_Hashable", "Parse"]
 - !private ["Ps9_Hashable", "ParseClientConfiguration"]
 - ["Ps9_Hashable", "application"]
@@ -350,12 +373,14 @@ depends-member:
 - ["Ps9_Hashable", "applicationWillUpdate"]
 - !private ["Ps9_Hashable", "init"]
 - !private ["Ps9_Hashable", "initialize"]
+- !private ["Ps9_Hashable", "registerSubclass"]
 - ["Ps9_Hashable", ""]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
 depends-nominal:
 - "Ps9AnyObject"
 - "C14Parse_Exporter11AppDelegate"
 - "Ps7CVarArg"
+- !private "C14Parse_Exporter8Category"
 - !private "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
 - !private "Ps29CustomPlaygroundQuickLookable"
@@ -380,6 +405,8 @@ depends-nominal:
 - !private "PSo14NSSecureCoding"
 - !private "CSo8NSString"
 - !private "Sq"
+- !private "CSo8PFObject"
+- !private "PSo13PFSubclassing"
 - !private "CSo5Parse"
 - "CSo24ParseClientConfiguration"
 - !private "PSo31ParseMutableClientConfiguration"

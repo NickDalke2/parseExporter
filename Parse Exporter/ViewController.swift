@@ -37,7 +37,6 @@ class ViewController: NSViewController {
                 print("Loading canceled")
                 return;
         }
-        
         guard
             let stringData = try? Data(contentsOf: url)
             else {
@@ -46,6 +45,9 @@ class ViewController: NSViewController {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
             
             do {
+                let categoryQuery = PFQuery(className: Category.parseClassName() )
+                let categories = try categoryQuery.findObjects() as! [Category]
+                
                 let  dataString = try JSONSerialization.jsonObject(with: stringData, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String : Any]
                 
                 guard let results = dataString["results"] as? [[String : Any]] else {
@@ -55,7 +57,7 @@ class ViewController: NSViewController {
                 
                 for result in results  {
                     let description = (result["description"] as? String) ?? ""
-                    let category = (result["category"]  as? String) ?? ""
+                    
                     let isPending = (result["isPending"] as? Bool) ?? false
                     let title = (result["title"]  as? String) ?? ""
                     let location = (result["location"]  as? String) ?? ""
@@ -75,6 +77,27 @@ class ViewController: NSViewController {
                         }
                     }
                     
+                    var category : Category? = nil
+                    if let categoryString = result["category"]  as? String {
+                        let tmpCategories = categories.filter({ (category) -> Bool in
+                            if category.name.contains(categoryString) ||
+                                categoryString.contains(category.name) ||
+                                category.name.lowercased() == categoryString.lowercased() {
+                                return true
+                            }
+                            
+                            let categoriesString = categoryString.components(separatedBy: " ")
+                            for categoryArrayString in categoriesString {
+                                if category.name.contains(categoryArrayString) ||
+                                    categoryArrayString.contains(category.name) ||
+                                    category.name.lowercased() == categoryArrayString.lowercased() {
+                                    return true
+                                }
+                            }
+                            return false
+                        })
+                        category = tmpCategories.first
+                    }
                     
                     var imageFile : PFFile? = nil
                     if let imageDic = result["image"] as? [String : Any] {
@@ -104,8 +127,6 @@ class ViewController: NSViewController {
                     
                     let dateFormatter2 = DateFormatter()
                     dateFormatter2.dateFormat = "MM/dd/yyyy HH:mm:ss"
-                    
-                    dateFormatter.dateFormat = ""
                     
                     var startDate : Date? = nil
                     if let startDateDic = result["startDate"] as? [String: String] {
@@ -143,18 +164,27 @@ class ViewController: NSViewController {
                     
                     let event = PFObject(className: "Events")
                     event["description"] = description
-                    event["category"] = category
                     event["isPending"] = isPending
                     event["title"] = title
                     event["location"] = location
                     event["keywords"] = keywords
                     event["website"] = website
                     event["cost"] = cost
-                    event["startDate"] = startDate
-                    event["endDate"] = endDate
+                    if let startDate = startDate {
+                        event["startDate"] = startDate
+                    }
+                    if let endDate = endDate {
+                        event["endDate"] = endDate
+                    }
                     
                     if let coordinate = coordinate {
                         event["coordinate"] = coordinate
+                    }
+                    
+                    if let category = category {
+                        event["category"] = category
+                    } else {
+                        print(result["category"])
                     }
                     
                     if let imageFile = imageFile {
