@@ -86,7 +86,10 @@ class ViewController: NSViewController {
                                 return true
                             }
                             
-                            let categoriesString = categoryString.components(separatedBy: " ")
+                            var categoriesString = categoryString.components(separatedBy: " ")
+                            if let index = categoriesString.index(of: "/") {
+                                categoriesString.remove(at: index)
+                            }
                             for categoryArrayString in categoriesString {
                                 if category.name.contains(categoryArrayString) ||
                                     categoryArrayString.contains(category.name) ||

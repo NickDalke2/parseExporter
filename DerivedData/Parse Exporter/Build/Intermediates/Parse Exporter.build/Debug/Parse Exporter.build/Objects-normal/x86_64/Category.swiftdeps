@@ -6,16 +6,16 @@ provides-nominal:
 provides-member:
 - ["C14Parse_Exporter8Category", ""]
 provides-dynamic-lookup:
+- "parseClassName"
 - "name"
 - "icon"
-- "parseClassName"
 depends-top-level:
-- "String"
 - "Category"
+- "String"
 - "PFFile"
-- "PFSubclassing"
-- "PFObject"
 - !private "StringLiteralType"
+- "PFObject"
+- "PFSubclassing"
 depends-member:
 - ["Ps9AnyObject", "icon"]
 - !private ["Ps9AnyObject", "init"]
